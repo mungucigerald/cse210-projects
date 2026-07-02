@@ -35,7 +35,10 @@ class Program
         {
             if (score % 10 >= 7)
             {
-                letter += "+";
+                if (letter != "A")
+                {
+                    letter += "+";
+                }
             }
             else if (score % 10 <= 3)
             {
