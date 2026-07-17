@@ -35,9 +35,9 @@ class Program
             if (response == "quit")
             {
                 keepRunning = false;
+                Console.WriteLine("Goodbye!");
             }
 
-            Console.WriteLine("Goodbye!");
         }
 
         // Runs the hide and reveal words practice session for the given scripture. 
