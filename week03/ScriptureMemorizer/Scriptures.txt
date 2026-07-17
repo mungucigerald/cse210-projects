@@ -1,0 +1,12 @@
+John|3|16||For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.
+Proverbs|3|5|6|Trust in the Lord with all your heart and lean not on your own understanding.
+Philippians|4|13||I can do all things through Christ who strengthens me.
+Joshua|1|9||Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.
+Psalm|23|1||The Lord is my shepherd, I lack nothing.
+Romans|8|28||And we know that in all things God works for the good of those who love him, who have been called according to his purpose.
+Isaiah|41|10||Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand.
+Matthew|6|33||But seek first his kingdom and his righteousness, and all these things will be given to you as well.
+Jeremiah|29|11||For I know the plans I have for you, plans to prosper you and not to harm you, plans to give you hope and a future.
+James|1|2|4|Consider it pure joy, my brothers and sisters, whenever you face trials of many kinds, because you know that the testing of your faith produces perseverance.
+1 Corinthians|13|4|7|Love is patient, love is kind. It does not envy, it does not boast, it is not proud.
+Galatians|5|22|23|But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness, gentleness and self-control.
