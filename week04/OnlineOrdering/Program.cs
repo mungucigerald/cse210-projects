@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
+
+// Entry point, demonstrates by building two sample orders and prints them out as a Summary
 class Program
 {
     static void Main(string[] args)
-    {
+    {  
+        // Domestic Order in the USA with products list updated with AddProduct() Method 
         Address address1 = new("123 Maple Street", "Springfield", "IL", "USA");
         Customer customer1 = new("Alice Johnson", address1);
 
@@ -14,6 +17,7 @@ class Program
 
         order1.PrintOrderSummary("Order 1", order1);
 
+        // International Order outside USA, product list is built manually.
         Address address2 = new("$% Kings Lane", "London", "England", "United Kingdom");
         Customer customer2 = new("Hillary Flemming", address2);
 
