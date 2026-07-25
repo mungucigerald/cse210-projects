@@ -47,13 +47,13 @@ public class Order
 
     // Returns the shipping fee for this order.
     // Customer's country inspected to determine the right shipping cost ie Domestic V International.
-    public decimal GetShippingCost()
+    private decimal GetShippingCost()
     {
         return _customer.IsInUSA() ? DomesticShippingCost : InternationalShippingCost;
     }
 
     // Returns the full price of the order: products are added to the shipping cost
-    public decimal GetTotalCost()
+    private decimal GetTotalCost()
     {
         decimal total = 0m;
         foreach (Product product in _products)
@@ -65,7 +65,7 @@ public class Order
     }
 
     // Method to build the text for the packing label.
-    public string GetPackingLabel()
+    private string GetPackingLabel()
     {
         StringBuilder stringBuilder = new();
         stringBuilder.AppendLine("=== Pack Label ===");
@@ -77,7 +77,7 @@ public class Order
     }
 
     // Method to build the text for the shipping label.
-    public string GetShippingLabel()
+    private string GetShippingLabel()
     {
         StringBuilder stringBuilder = new();
         stringBuilder.AppendLine("=== For Shipping ===");
