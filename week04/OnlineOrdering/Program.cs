@@ -18,7 +18,7 @@ class Program
         order1.PrintOrderSummary("Order 1", order1);
 
         // International Order outside USA, product list is built manually.
-        Address address2 = new("$% Kings Lane", "London", "England", "United Kingdom");
+        Address address2 = new(" Kings Lane", "London", "England", "United Kingdom");
         Customer customer2 = new("Hillary Flemming", address2);
 
         List<Product> order2lst = new()
