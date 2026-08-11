@@ -29,6 +29,7 @@ public abstract class Goal
         _points = points;
     }
 
+    // Abstract method left blank for override in each derived class.
     public abstract int RecordEvent();
 
     public abstract bool IsComplete();

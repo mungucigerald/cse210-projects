@@ -97,51 +97,41 @@ public class GoalManager
 
     public void CreateGoal()
     {
-        Loading();
         Console.WriteLine("The types of Goals are:");
         Console.WriteLine("     1. Simple Goal");
         Console.WriteLine("     2. Eternal Goal");
         Console.WriteLine("     3. Checklist Goal");
         Console.Write("Which type of goal would you like to create? ");
         string goalChoice = Console.ReadLine();
-        Loading();
 
         Console.Write("What is the name of your goal? ");
         string goalName = Console.ReadLine();
-        Loading();
 
         Console.Write("Briefly describe this goal. ");
         string goalDescription = Console.ReadLine();
-        Loading();
 
         Console.Write("What is the most amount of points associated with this goal? ");
         int points = ReadInt();
-        Loading();
 
         switch (goalChoice)
         {
             case "1":
                 _goals.Add(new SimpleGoal(goalName, goalDescription, points));
-                Loading();
                 Console.WriteLine("Simple goal created!");
                 break;
             case "2":
                 _goals.Add(new EternalGoal(goalName, goalDescription, points));
-                Loading();
                 Console.WriteLine("Eternal goal created!");
                 break;
             case "3":
                 Console.Write("How many times does this goal need to be acclomplished for a bonus?");
                 int target = ReadInt();
-                Loading();
                 Console.WriteLine("What is the bonus for acclomplishing it that many times?");
                 int bonus = ReadInt();
                 _goals.Add(new CheckListGoal(goalName, goalDescription, points, target, bonus));
-                Loading();
                 Console.WriteLine("Checklist goal created!");
                 break;
             default:
-                Loading();
                 Console.WriteLine("Invalid goal type. No goal created.");
                 break;
         }
@@ -198,7 +188,6 @@ public class GoalManager
     {
         Console.Write("What is the file name for the goal file? ");
         string filename = Console.ReadLine();
-        Loading();
 
         if (!File.Exists(filename))
         {
@@ -219,19 +208,15 @@ public class GoalManager
             switch (type)
             {
                 case "SimpleGoal":
-                    Loading();
                     _goals.Add(new SimpleGoal(data[0], data[1], int.Parse(data[2]), bool.Parse(data[3])));
                     break;
                 case "EternalGoal":
-                    Loading();
                     _goals.Add(new EternalGoal(data[0], data[1], int.Parse(data[2])));
                     break;
                 case "ChecklistGoal":
-                    Loading();
                     _goals.Add(new CheckListGoal(data[0], data[1], int.Parse(data[2]), int.Parse(data[3]), int.Parse(data[4]), int.Parse(data[5])));
                     break;
                 default:
-                    Loading();
                     Console.WriteLine($"Unrecognized goal on line {i + 1}, skipping.");
                     break;
 
@@ -250,43 +235,4 @@ public class GoalManager
         return result;
     }
 
-    private void Loading()
-    {
-        int totalSteps = 8;
-        int[] delays = GetEasedDelays();
-
-        for (int i = 0; i <= totalSteps; i++)
-        {
-            // Console.CursorVisible = false;
-            // CLear the line before redrawing to remove any old dots
-            Console.Write("\r" + new string(' ', 40));
-            int dotCount = true ? i : totalSteps - i;
-            Console.Write($"\r{new string('.', dotCount)}");
-            Thread.Sleep(delays[i]);
-            Console.Write("\r" + new string(' ', 40));
-        }
-        Console.WriteLine();
-    }
-
-    private int[] GetEasedDelays()
-    {
-        int totalMs = 5 * 1000;
-        int steps = 8;
-        int[] delays = new int[steps + 1];
-        int sum = 0;
-
-        // Give each step an increasing weight ie 1, 2, 3, ...
-        for (int i = 0; i <= 8; i++)
-        {
-            delays[i] = i + 1;
-            sum += delays[i];
-        }
-
-        for (int i = 0; i <= steps; i++)
-        {
-            delays[i] = (int)((double)delays[i] / sum * totalMs);
-        }
-
-        return delays;
-    }
 }
