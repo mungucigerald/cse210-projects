@@ -41,7 +41,7 @@ public abstract class Goal
     public virtual string GetDetailsString()
     {
         string check = IsComplete() ? "[X]" : "[ ]";
-        return $"{check} {_shortName} ({_description})";
+        return $"{check}, {_shortName} ({_description})";
     }
 
 }

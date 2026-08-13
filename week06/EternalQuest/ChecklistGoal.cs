@@ -41,7 +41,7 @@ public class CheckListGoal : Goal
     public override string GetDetailsString()
     {
         string check = IsComplete() ? "[X]" : "[ ]";
-        return $"{check}, {ShortName} {Description} --- Completed {_amountCompleted / _target}";
+        return $"{check}, {ShortName} {Description} --- Completed {_amountCompleted }/{_target}";
     }
 
     public override string GetStringRepresentation()

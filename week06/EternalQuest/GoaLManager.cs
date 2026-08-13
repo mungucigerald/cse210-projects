@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices.Marshalling;
 
 public class GoalManager
 {
@@ -203,17 +202,17 @@ public class GoalManager
         {
             string[] parts = lines[i].Split(":");
             string type = parts[0];
-            string[] data = parts[1].Split(",");
+            string[] data = parts[1].Split(",").Select(d => d.Trim()).ToArray();
 
             switch (type)
             {
-                case "SimpleGoal":
+                case "Simple Goal":
                     _goals.Add(new SimpleGoal(data[0], data[1], int.Parse(data[2]), bool.Parse(data[3])));
                     break;
-                case "EternalGoal":
+                case "Eternal Goal":
                     _goals.Add(new EternalGoal(data[0], data[1], int.Parse(data[2])));
                     break;
-                case "ChecklistGoal":
+                case "Checklist Goal":
                     _goals.Add(new CheckListGoal(data[0], data[1], int.Parse(data[2]), int.Parse(data[3]), int.Parse(data[4]), int.Parse(data[5])));
                     break;
                 default:
